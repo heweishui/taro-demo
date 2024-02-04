@@ -1,5 +1,7 @@
 packages:
   - 'packages/**'
+  - 'examples/mini-program-example'
+  - 'examples/demo-vue2'
   - '!packages/taro-cli/templates/**'
   - '!**/__tests__/**'
   - 'npm/**'

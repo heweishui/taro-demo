@@ -10,6 +10,7 @@ export function initTabbar (config: AppConfig, history: History) {
 
   // TODO: custom-tab-bar
   defineCustomElementTaroTabbar()
+  // @ts-ignore
   const tabbar: any = document.createElement('taro-tabbar') as HTMLDivElement
   const homePage = config.entryPagePath || (config.pages ? config.pages[0] : '')
   tabbar.conf = config.tabBar

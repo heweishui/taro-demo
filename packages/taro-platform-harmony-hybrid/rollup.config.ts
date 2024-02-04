@@ -5,7 +5,9 @@ import { merge } from 'lodash'
 import path from 'path'
 import { defineConfig } from 'rollup'
 import externals from 'rollup-plugin-node-externals'
+import postcss from 'rollup-plugin-postcss'
 import ts from 'rollup-plugin-ts'
+import vue from 'rollup-plugin-vue'
 
 import exportNameOnly from './build/rollup-plugin-export-name-only'
 
@@ -39,6 +41,10 @@ function getPlugins<T = InputPluginOption> (pre: T[] = [], post: T[] = []) {
         declaration: true,
         sourceMap: true,
       })
+    }),
+    vue(),
+    postcss({
+      inject: { insertAt: 'top' }
     }),
     commonjs(),
     ...post
