@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "outDir": "dist"
   },
-  "include": ["./src", "./types", "rollup.config.ts"],
+  "include": ["./src", "./types", "rollup.config.ts", "./src/**/*.vue", "./env.d.ts"],
   "ts-node": {
     "compilerOptions": {
       "module": "UMD",

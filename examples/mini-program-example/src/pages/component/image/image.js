@@ -9,9 +9,6 @@ import Header from '../../../components/head/head'
 import ComponentState from '../../../components/component_state/component_state'
 
 export default class PageView extends React.Component {
- handleLoad = (e)=>{
-   console.log('e---->',e)
-  }
   render() {
     return (
       <View className='components-page'>
@@ -27,7 +24,7 @@ export default class PageView extends React.Component {
               <Text>Local Image</Text>
             </View>
             <View className='example-body'>
-              <Image style={{ width: '300px', height: '300px' }} src={nervLogo} lazyLoad onLoad={e=>this.handleLoad(e)}></Image>
+              <Image style={{ width: '300px', height: '300px' }} src={nervLogo}></Image>
             </View>
           </View>
           <View className='components-page__body-example example'>

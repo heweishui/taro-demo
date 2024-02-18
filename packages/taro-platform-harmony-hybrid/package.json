@@ -56,7 +56,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "resolve": "^1.22.0",
-    "vue": "^2.6.11",
+    "vue": "2.7.16",
+    "vue-template-compiler": "2.7.14",
     "weui": "^1.1.2",
     "whatwg-fetch": "^3.4.0"
   },
@@ -66,22 +67,21 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
-    "@rollup/plugin-typescript": "^4.1.2",
+    "@rollup/plugin-typescript": "11.1.0",
     "@types/react": "^18.2.0",
-    "@types/vue": "^2.0.0",
     "@vue/compiler-sfc": "^2.6.11",
     "fast-glob": "^3.3.1",
     "lodash": "^4.17.21",
     "rollup": "^3.8.1",
-    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-externals": "^5.0.0",
     "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-ts": "^3.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
     "rollup-plugin-vue": "^5.1.9",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^3.14.1",
     "typescript": "^4.7.4",
-    "vue-loader": "^15.9.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2"
   }
 }

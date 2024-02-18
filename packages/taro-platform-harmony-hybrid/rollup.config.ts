@@ -7,6 +7,7 @@ import { defineConfig } from 'rollup'
 import externals from 'rollup-plugin-node-externals'
 import postcss from 'rollup-plugin-postcss'
 import ts from 'rollup-plugin-ts'
+import typescript from 'rollup-plugin-typescript2'
 import vue from 'rollup-plugin-vue'
 
 import exportNameOnly from './build/rollup-plugin-export-name-only'
@@ -42,7 +43,6 @@ function getPlugins<T = InputPluginOption> (pre: T[] = [], post: T[] = []) {
         sourceMap: true,
       })
     }),
-    vue(),
     postcss({
       inject: { insertAt: 'top' }
     }),
@@ -67,7 +67,7 @@ const variesConfig: RollupOptions[] = [{
     'src/api/apis/taro.ts', // APIS
     'src/api/index.ts', // APIS
     'src/components/react/index.ts', // React 组件
-    'src/components/vue2/index.ts', // vue2 组件
+    // 'src/components/vue2/index.ts', // vue2 组件
     'src/components/vue3/index.ts', // vue3 组件
     'src/runtime/index.ts', // 供 Loader 使用的运行时入口
     'src/runtime/apis/index.ts', // API 入口
@@ -82,6 +82,31 @@ const variesConfig: RollupOptions[] = [{
     deps: true,
     devDeps: false,
   })])
+},{
+  input: [
+    'src/components/vue2/index.ts', // vue2 组件
+  ],
+  output: {
+    dir: 'dist',
+    preserveModules: true,
+    preserveModulesRoot: 'src'
+  },
+  plugins: [
+    nodeResolve({
+      preferBuiltins: false,
+      mainFields: ['main:harmony-hybrid', 'browser', 'module', 'jsnext:main', 'main']
+    }),
+    json({
+      compact: true,
+      preferConst: true,
+    }),
+    postcss({
+      inject: { insertAt: 'top' }
+    }),
+    typescript(),
+    vue(),
+    commonjs(),
+  ]
 }, {
   input: path.join(cwd, 'src/runtime/apis/index.ts'), // 供 babel-plugin-transform-taroapi 使用，为了能 tree-shaking
   output: {

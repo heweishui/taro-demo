@@ -1,7 +1,7 @@
 import 'weui'
 import './style/index.css'
 
-import classNames from 'classnames'
+// import classNames from 'classnames'
 import React from 'react'
 
 require('intersection-observer')
@@ -29,6 +29,8 @@ class Image extends React.Component<IProps> {
   imgRef: any = null
 
   componentDidMount () {
+    // eslint-disable-next-line no-console
+    console.log('component-react/image/index')
     if (this.props.lazyLoad) {
       this.observer = new IntersectionObserver(
         entries => {
@@ -66,53 +68,53 @@ class Image extends React.Component<IProps> {
     onLoad && onLoad(e)
   }
 
-  render () {
-    const {
-      className,
-      style = {},
-      src,
-      mode,
-      onError,
-      lazyLoad,
-      imgProps,
-      ...reset
-    } = this.props
-    const cls = classNames(
-      'taro-img',
-      {
-        'taro-img__widthfix': mode === 'widthFix'
-      },
-      className
-    )
-    const imgCls = classNames(
-      'taro-img__mode-' +
-        (mode || 'scaleToFill').toLowerCase().replace(/\s/g, '')
-    )
+  // render () {
+  //   const {
+  //     className,
+  //     style = {},
+  //     src,
+  //     mode,
+  //     onError,
+  //     lazyLoad,
+  //     imgProps,
+  //     ...reset
+  //   } = this.props
+  //   const cls = classNames(
+  //     'taro-img',
+  //     {
+  //       'taro-img__widthfix': mode === 'widthFix'
+  //     },
+  //     className
+  //   )
+  //   const imgCls = classNames(
+  //     'taro-img__mode-' +
+  //       (mode || 'scaleToFill').toLowerCase().replace(/\s/g, '')
+  //   )
 
-    return (
-      <div className={cls} style={style} {...reset}>
-        {lazyLoad ? (
-          <img
-            ref={img => (this.imgRef = img)}
-            className={imgCls}
-            data-src={src}
-            onLoad={this.imageOnLoad}
-            onError={onError}
-            {...imgProps}
-          />
-        ) : (
-          <img
-            ref={img => (this.imgRef = img)}
-            className={imgCls}
-            src={src}
-            onLoad={this.imageOnLoad}
-            onError={onError}
-            {...imgProps}
-          />
-        )}
-      </div>
-    )
-  }
+  //   return (
+  //     <div className={cls} style={style} {...reset}>
+  //       {lazyLoad ? (
+  //         <img
+  //           ref={img => (this.imgRef = img)}
+  //           className={imgCls}
+  //           data-src={src}
+  //           onLoad={this.imageOnLoad}
+  //           onError={onError}
+  //           {...imgProps}
+  //         />
+  //       ) : (
+  //         <img
+  //           ref={img => (this.imgRef = img)}
+  //           className={imgCls}
+  //           src={src}
+  //           onLoad={this.imageOnLoad}
+  //           onError={onError}
+  //           {...imgProps}
+  //         />
+  //       )}
+  //     </div>
+  //   )
+  // }
 }
 
 export default Image
