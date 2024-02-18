@@ -70,7 +70,7 @@
     "ora": "^5.0.0",
     "postcss-html-transform": "workspace:*",
     "postcss-import": "^14.0.0",
-    "postcss-loader": "^7.0.1",
+    "postcss-loader": "^8.1.0",
     "postcss-plugin-constparse": "workspace:*",
     "postcss-pxtransform": "workspace:*",
     "postcss-url": "^10.1.3",
