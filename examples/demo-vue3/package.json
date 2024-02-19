@@ -72,7 +72,7 @@
     "vue-loader": "^17.0.0",
     "eslint-plugin-vue": "^8.0.0",
     "eslint-config-taro": "3.6.23",
-    "eslint": "^8.12.0",
+    "eslint": "^8.56.0",
     "stylelint": "^14.4.0",
     "@typescript-eslint/parser": "^6.2.0",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
