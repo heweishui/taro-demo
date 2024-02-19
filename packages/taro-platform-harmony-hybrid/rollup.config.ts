@@ -8,7 +8,7 @@ import externals from 'rollup-plugin-node-externals'
 import postcss from 'rollup-plugin-postcss'
 import ts from 'rollup-plugin-ts'
 import typescript from 'rollup-plugin-typescript2'
-import vue2 from 'rollup-plugin-vue2'
+import vue from 'rollup-plugin-vue'
 
 import exportNameOnly from './build/rollup-plugin-export-name-only'
 
@@ -68,7 +68,7 @@ const variesConfig: RollupOptions[] = [{
     'src/api/index.ts', // APIS
     'src/components/react/index.ts', // React 组件
     // 'src/components/vue2/index.ts', // vue2 组件
-    'src/components/vue3/index.ts', // vue3 组件
+    // 'src/components/vue3/index.ts', // vue3 组件
     'src/runtime/index.ts', // 供 Loader 使用的运行时入口
     'src/runtime/apis/index.ts', // API 入口
     'src/runtime/components/index.ts', // Components Library
@@ -85,6 +85,7 @@ const variesConfig: RollupOptions[] = [{
 },{
   input: [
     'src/components/vue2/index.ts', // vue2 组件
+    // 'src/components/vue3/index.ts', // vue3 组件
   ],
   output: {
     dir: 'dist',
@@ -104,7 +105,7 @@ const variesConfig: RollupOptions[] = [{
       inject: { insertAt: 'top' }
     }),
     typescript(),
-    vue2(),
+    vue(),
     commonjs(),
   ]
 }, {

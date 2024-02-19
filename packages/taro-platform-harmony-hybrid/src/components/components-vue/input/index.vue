@@ -6,11 +6,11 @@
 </template>
 
 <script lang="ts">
-import Vue2 from 'vue2';
+import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator';
 
 @Component
-export default class CustomInput extends Vue2 {
+export default class CustomInput extends Vue {
   @Prop({ type: String, required: true }) readonly type!: string;
   @Prop({ type: String, required: true }) readonly title!: string;
   @Prop({ type: Boolean, required: false }) readonly isShow!: boolean;
