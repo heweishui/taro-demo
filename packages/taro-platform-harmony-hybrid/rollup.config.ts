@@ -8,7 +8,7 @@ import externals from 'rollup-plugin-node-externals'
 import postcss from 'rollup-plugin-postcss'
 import ts from 'rollup-plugin-ts'
 import typescript from 'rollup-plugin-typescript2'
-import vue from 'rollup-plugin-vue'
+import vue2 from 'rollup-plugin-vue2'
 
 import exportNameOnly from './build/rollup-plugin-export-name-only'
 
@@ -104,7 +104,7 @@ const variesConfig: RollupOptions[] = [{
       inject: { insertAt: 'top' }
     }),
     typescript(),
-    vue(),
+    vue2(),
     commonjs(),
   ]
 }, {
