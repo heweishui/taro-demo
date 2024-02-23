@@ -1,6 +1,7 @@
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+// import  resolve  from '@rollup/plugin-node-resolve2'
 import { merge } from 'lodash'
 import path from 'path'
 import { defineConfig } from 'rollup'
@@ -8,8 +9,9 @@ import externals from 'rollup-plugin-node-externals'
 import postcss from 'rollup-plugin-postcss'
 import ts from 'rollup-plugin-ts'
 import typescript from 'rollup-plugin-typescript2'
-import vue from 'rollup-plugin-vue'
+import vue2 from 'rollup-plugin-vue2'
 
+// import vue3 from 'rollup-plugin-vue3'
 import exportNameOnly from './build/rollup-plugin-export-name-only'
 
 import type { InputPluginOption, RollupOptions } from 'rollup'
@@ -68,7 +70,7 @@ const variesConfig: RollupOptions[] = [{
     'src/api/index.ts', // APIS
     'src/components/react/index.ts', // React 组件
     // 'src/components/vue2/index.ts', // vue2 组件
-    // 'src/components/vue3/index.ts', // vue3 组件
+    'src/components/vue3/index.ts', // vue3 组件
     'src/runtime/index.ts', // 供 Loader 使用的运行时入口
     'src/runtime/apis/index.ts', // API 入口
     'src/runtime/components/index.ts', // Components Library
@@ -104,11 +106,45 @@ const variesConfig: RollupOptions[] = [{
     postcss({
       inject: { insertAt: 'top' }
     }),
-    typescript(),
-    vue(),
+    ts({
+      tsconfig: e => ({
+        ...e,
+        declaration: true,
+        sourceMap: true,
+      })
+    }),
+    typescript({
+      tsconfigOverride: {
+        compilerOptions: {
+          declaration: true
+        }
+      }
+    }),
+    vue2(),
     commonjs(),
   ]
-}, {
+},{
+//   input: [
+//     'src/components/vue3/index.ts', // vue3 组件
+//   ],
+//   output: {
+//     dir: 'dist',
+//     preserveModules: true,
+//     preserveModulesRoot: 'src'
+//   },
+//   plugins: [
+//     typescript(),
+//     resolve({
+//       preferBuiltins: false,
+//       mainFields: ['main:harmony-hybrid', 'browser', 'module', 'jsnext:main', 'main']
+//     }),
+//     vue2(),
+//     postcss({
+//       inject: { insertAt: 'top' }
+//     }),
+//     commonjs(),
+//   ]
+// }, {
   input: path.join(cwd, 'src/runtime/apis/index.ts'), // 供 babel-plugin-transform-taroapi 使用，为了能 tree-shaking
   output: {
     file: 'dist/taroApis.js',
