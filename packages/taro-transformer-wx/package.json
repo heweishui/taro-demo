@@ -60,7 +60,7 @@
     "@babel/template": "7.21.9",
     "@babel/traverse": "^7.21.4",
     "@babel/types": "^7.21.4",
-    "babel-eslint": "^8.2.3",
+    "babel-eslint": "^10.1.0",
     "babel-helper-evaluate-path": "^0.5.0",
     "babel-helper-mark-eval-scopes": "^0.4.3",
     "babel-helper-remove-or-void": "^0.4.3",
