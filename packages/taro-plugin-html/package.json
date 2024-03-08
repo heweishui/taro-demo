@@ -30,7 +30,7 @@
     "@babel/generator": "^7.20.0",
     "@babel/parser": "^7.20.0",
     "@babel/traverse": "^7.20.0",
-    "@babel/types": "^7.20.0",
+    "@babel/types": "^7.24.0",
     "@tarojs/runtime": "workspace:*",
     "@tarojs/service": "workspace:*",
     "@tarojs/shared": "workspace:*"
