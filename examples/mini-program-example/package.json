@@ -71,7 +71,7 @@
     "@tarojs/webpack5-runner": "workspace:*",
     "babel-preset-taro": "workspace:*",
     "eslint-config-taro": "workspace:*",
-    "eslint": "^8.12.0",
+    "eslint": "^8.57.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "react-refresh": "^0.11.0",
     "eslint-plugin-react": "^7.8.2",
