@@ -7,9 +7,10 @@
     "module": "ESNext",
     "sourceMap": true,
     "esModuleInterop": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "noUnusedLocals": false
   },
-  "include": ["./src", "./types", "rollup.config.ts", "./src/**/*.vue", "./env.d.ts"],
+  "include": ["./src", "./types", "rollup.config.ts", "./src/**/*.vue", "./env.d.ts", "mini"],
   "ts-node": {
     "compilerOptions": {
       "module": "UMD",
