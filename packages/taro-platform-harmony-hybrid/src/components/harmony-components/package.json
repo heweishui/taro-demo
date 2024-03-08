@@ -62,7 +62,7 @@
     "@babel/generator": "^7.20.0",
     "@babel/parser": "^7.20.0",
     "@babel/traverse": "^7.20.0",
-    "@babel/types": "^7.20.0",
+    "@babel/types": "^7.24.0",
     "@stencil/react-output-target": "0.4.0",
     "@stencil/vue-output-target": "0.7.0",
     "@types/jest": "^27.4.1",
