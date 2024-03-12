@@ -66,7 +66,7 @@
     "@babel/core": "^7.8.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@tarojs/cli": "workspace:*",
-    "@tarojs/harmony-components": "workspace:^3.6.24",
+    "@tarojs/harmony-components": "workspace:*",
     "@tarojs/webpack5-runner": "workspace:*",
     "@types/node": "^18.15.11",
     "@types/react": "^18.2.0",
