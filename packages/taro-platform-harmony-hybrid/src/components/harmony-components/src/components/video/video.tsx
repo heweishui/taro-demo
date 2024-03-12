@@ -623,7 +623,7 @@ export class Video implements ComponentInterface {
           onError={this.handleError}
           onDurationChange={this.handleDurationChange}
           onProgress={this.handleProgress}
-          onLoadedMetadata={this.handleLoadedMetaData}
+          // onLoadedMetadata={this.handleLoadedMetaData}
           {...nativeProps}
         >
           暂时不支持播放该视频

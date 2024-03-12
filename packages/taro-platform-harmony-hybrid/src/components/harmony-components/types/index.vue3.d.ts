@@ -62,10 +62,10 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       /** 媒体组件 */
-      video: ElementAttrs<TransformReact2VueType<VideoProps>>
+      Video: ElementAttrs<TransformReact2VueType<VideoProps>>
       'taro-video-core': ElementAttrs<TransformReact2VueType<VideoProps>>
-      'voip-room': ElementAttrs<TransformReact2VueType<VoipRoomProps>>
-      'taro-voip-room-core': ElementAttrs<TransformReact2VueType<VoipRoomProps>>
+      // 'voip-room': ElementAttrs<TransformReact2VueType<VoipRoomProps>>
+      // 'taro-voip-room-core': ElementAttrs<TransformReact2VueType<VoipRoomProps>>
       /** 地图 */
       // map: ElementAttrs<TransformReact2VueType<MapProps>>
       // 'taro-map-core': ElementAttrs<TransformReact2VueType<MapProps>>
