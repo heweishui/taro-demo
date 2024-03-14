@@ -75,7 +75,7 @@ common/autoinstallers/*/.npmrc
 .heft
 
 target/
-debug/
+# debug/
 
 # Binding artifacts
 artifacts

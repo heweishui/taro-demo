@@ -7,7 +7,7 @@ import prodConfig from './prod'
 export default defineConfig(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport = {
     projectName: 'demo-vue3',
-    date: '2024-2-18',
+    date: '2024-3-13',
     designWidth: 750,
     deviceRatio: {
       640: 2.34 / 2,
