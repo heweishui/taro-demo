@@ -564,16 +564,16 @@ importers:
         specifier: ^7.8.0
         version: registry.npmjs.org/@babel/core@7.21.8
       '@tarojs/cli':
-        specifier: workspace:*
+        specifier: 3.6.24
         version: link:../../packages/taro-cli
       '@tarojs/taro-loader':
-        specifier: workspace:*
+        specifier: 3.6.24
         version: link:../../packages/taro-loader
       '@tarojs/test-utils-vue3':
         specifier: ^0.1.1
         version: registry.npmjs.org/@tarojs/test-utils-vue3@0.1.1(@babel/core@7.21.8)(@tarojs/components@packages+taro-components)(@tarojs/helper@packages+taro-helper)(@tarojs/plugin-framework-vue3@packages+taro-plugin-vue3)(@tarojs/plugin-platform-h5@packages+taro-platform-h5)(@tarojs/runtime@packages+taro-runtime)(@tarojs/shared@packages+shared)(jest@29.7.0)(typescript@5.3.3)(vue@3.2.47)
       '@tarojs/webpack5-runner':
-        specifier: workspace:*
+        specifier: 3.6.24
         version: link:../../packages/taro-webpack5-runner
       '@types/jest':
         specifier: ^29.3.1
@@ -597,7 +597,7 @@ importers:
         specifier: ^3.0.0
         version: registry.npmjs.org/@vue/compiler-sfc@3.2.47
       babel-preset-taro:
-        specifier: workspace:*
+        specifier: 3.6.24
         version: link:../../packages/babel-preset-taro
       css-loader:
         specifier: 3.4.2
@@ -606,7 +606,7 @@ importers:
         specifier: ^8.12.0
         version: registry.npmjs.org/eslint@8.41.0
       eslint-config-taro:
-        specifier: workspace:*
+        specifier: 3.6.24
         version: link:../../packages/eslint-config-taro
       eslint-plugin-vue:
         specifier: ^8.0.0
