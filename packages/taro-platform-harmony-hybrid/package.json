@@ -24,7 +24,8 @@
     "url": "git+https://github.com/NervJS/taro.git"
   },
   "scripts": {
-    "prebuild": "run-s clean generate:desc",
+    "prebuild": "pnpm run build:components && run-s clean generate:desc",
+    "build:components": "cd ./src/components/harmony-components && pnpm run build",
     "build": "pnpm run rollup --environment NODE_ENV:production",
     "clean": "rimraf dist",
     "dev": "pnpm run rollup --environment NODE_ENV:development -w",

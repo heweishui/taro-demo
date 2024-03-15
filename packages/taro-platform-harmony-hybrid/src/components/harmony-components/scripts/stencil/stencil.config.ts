@@ -15,38 +15,12 @@ const outputTargets: OutputTarget[] = [
   }),
   vue2OutputTarget({
     componentCorePackage: '@tarojs/harmony-components',
-    // componentModels: [{
-    //   elements: ['taro-input-core', 'taro-textarea-core'],
-    //   targetAttr: 'value',
-    //   event: 'update:modelValue',
-    // }, {
-    //   elements: ['taro-picker-core', 'taro-slider-core'],
-    //   targetAttr: 'value',
-    //   event: 'update:modelValue',
-    // }, {
-    //   elements: ['taro-switch-core'],
-    //   targetAttr: 'checked',
-    //   event: 'update:modelValue',
-    // }],
     customElementsDir: 'dist/components',
     includeImportCustomElements: true,
     proxiesFile: '../components-library-vue2/src/components.ts',
   }),
   vue3OutputTarget({
     componentCorePackage: '@tarojs/harmony-components',
-    // componentModels: [{
-    //   elements: ['taro-input-core', 'taro-textarea-core'],
-    //   targetAttr: 'value',
-    //   event: 'input',
-    // }, {
-    //   elements: ['taro-picker-core', 'taro-slider-core'],
-    //   targetAttr: 'value',
-    //   event: 'change',
-    // }, {
-    //   elements: ['taro-switch-core'],
-    //   targetAttr: 'checked',
-    //   event: 'change',
-    // }],
     customElementsDir: 'dist/components',
     includeImportCustomElements: true,
     proxiesFile: '../components-library-vue3/src/components.ts',
@@ -92,12 +66,6 @@ export const config: Config = {
   },
   outputTargets,
   bundles: [
-    // { components: ['taro-checkbox-core', 'taro-checkbox-group-core'] },
-    // { components: ['taro-movable-area-core', 'taro-movable-view-core'] },
-    // { components: ['taro-picker-core', 'taro-picker-group'] },
-    // { components: ['taro-picker-view-core', 'taro-picker-view-column-core'] },
-    // { components: ['taro-radio-core', 'taro-radio-group-core'] },
-    // { components: ['taro-swiper-core', 'taro-swiper-item-core'] },
     { components: ['taro-video-core', 'taro-video-control', 'taro-video-danmu'] }
   ],
   buildEs5: 'prod',
