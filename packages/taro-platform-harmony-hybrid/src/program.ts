@@ -58,6 +58,20 @@ export default class H5 extends TaroPlatformWeb {
     return path.join(path.dirname(require.resolve('@tarojs/components')), '..', 'lib')
   }
 
+  get harmonyComponentLibrary () {
+    if (this.useHtmlComponents && this.aliasFramework === 'react') {
+      return require.resolve('./runtime/components')
+    } else if (this.useDeprecatedAdapterComponent) {
+      return require.resolve(`@tarojs/harmony-components/lib/${this.aliasFramework}/component-lib`)
+    } else {
+      return require.resolve(`@tarojs/harmony-components/lib/${this.aliasFramework}`)
+    }
+  }
+
+  get harmonyComponentAdapter () {
+    return path.join(path.dirname(require.resolve('@tarojs/harmony-components')), '..', 'lib')
+  }
+
   get routerLibrary () {
     return require.resolve('@tarojs/router')
   }
@@ -92,6 +106,8 @@ export default class H5 extends TaroPlatformWeb {
       // TODO 考虑集成到 taroComponentsPath 中，与小程序端对齐
       alias.set('@tarojs/components$', this.componentLibrary)
       alias.set('@tarojs/components/lib', this.componentAdapter)
+      alias.set('@tarojs/harmony-components$', this.harmonyComponentLibrary)
+      alias.set('@tarojs/harmony-components/lib', this.harmonyComponentAdapter)
       alias.set('@tarojs/router$', this.routerLibrary)
       alias.set('@tarojs/taro', this.apiLibrary)
       chain.plugin('mainPlugin').tap((args) => {
@@ -113,8 +129,8 @@ export default class H5 extends TaroPlatformWeb {
 
         switch (this.framework) {
           case 'vue':
-            args[0].loaderMeta.extraImportForWeb += `import { initVue2Components } from '@tarojs/components/lib/vue2/components-loader'\nimport * as list from '@tarojs/components'\n`
-            args[0].loaderMeta.execBeforeCreateWebApp += `initVue2Components(list)\n`
+            args[0].loaderMeta.extraImportForWeb += `import { initVue2Components as initVue2Components1} from '@tarojs/harmony-components/lib/vue2/components-loader'\nimport { initVue2Components as initVue2Components2} from '@tarojs/components/lib/vue2/components-loader'\nimport * as list1 from '@tarojs/harmony-components'\nimport * as list2 from '@tarojs/components'\n`
+            args[0].loaderMeta.execBeforeCreateWebApp += `initVue2Components2(list2)\ninitVue2Components1(list1)\n`
             break
           case 'vue3':
             args[0].loaderMeta.extraImportForWeb += `import { initVue3Components } from '@tarojs/components/lib/vue3/components-loader'\nimport * as list from '@tarojs/components'\n`

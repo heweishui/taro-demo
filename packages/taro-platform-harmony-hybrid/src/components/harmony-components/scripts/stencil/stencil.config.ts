@@ -66,7 +66,7 @@ export const config: Config = {
   },
   outputTargets,
   bundles: [
-    { components: ['taro-video-core', 'taro-video-control', 'taro-video-danmu'] }
+    // { components: ['taro-video-core', 'taro-video-control', 'taro-video-danmu'] }
   ],
   buildEs5: 'prod',
   /**

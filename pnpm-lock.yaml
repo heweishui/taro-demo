@@ -393,6 +393,9 @@ importers:
       '@tarojs/components':
         specifier: workspace:*
         version: link:../../packages/taro-components
+      '@tarojs/harmony-components':
+        specifier: workspace:*
+        version: link:../../packages/taro-platform-harmony-hybrid/src/components/harmony-components
       '@tarojs/helper':
         specifier: workspace:*
         version: link:../../packages/taro-helper
@@ -1818,8 +1821,6 @@ importers:
         specifier: 18.1.0
         version: registry.npmjs.org/react-test-renderer@18.1.0(react@18.1.0)
 
-  packages/taro-components/dist/hydrate: {}
-
   packages/taro-components/loader: {}
 
   packages/taro-extend:
@@ -2407,7 +2408,7 @@ importers:
         specifier: workspace:*
         version: link:../taro-components-react
       '@tarojs/harmony-components':
-        specifier: workspace:^3.6.24
+        specifier: workspace:*
         version: link:src/components/harmony-components
       '@tarojs/router':
         specifier: workspace:*
@@ -2738,8 +2739,6 @@ importers:
       typescript:
         specifier: ^4.7.4
         version: registry.npmjs.org/typescript@4.9.5
-
-  packages/taro-platform-harmony-hybrid/src/components/harmony-components/dist/hydrate: {}
 
   packages/taro-platform-harmony-hybrid/src/components/harmony-components/loader: {}
 

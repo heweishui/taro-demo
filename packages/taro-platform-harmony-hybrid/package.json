@@ -25,7 +25,7 @@
   },
   "scripts": {
     "prebuild": "pnpm run build:components && run-s clean generate:desc",
-    "build:components": "cd ./src/components/harmony-components && pnpm run build",
+    "build:components": "cd ./src/components/harmony-components && pnpm run build && cd ../../../",
     "build": "pnpm run rollup --environment NODE_ENV:production",
     "clean": "rimraf dist",
     "dev": "pnpm run rollup --environment NODE_ENV:development -w",
@@ -36,11 +36,14 @@
   "bugs": {
     "url": "https://github.com/NervJS/taro/issues"
   },
+  "workspaces": [
+    "./src/components/harmony-components"
+  ],
   "dependencies": {
     "@tarojs/api": "workspace:*",
     "@tarojs/components": "workspace:*",
     "@tarojs/components-react": "workspace:*",
-    "@tarojs/harmony-components": "workspace:^3.6.24",
+    "@tarojs/harmony-components": "workspace:*",
     "@tarojs/router": "workspace:*",
     "@tarojs/runtime": "workspace:*",
     "@tarojs/service": "workspace:*",
