@@ -41,6 +41,7 @@
   "dependencies": {
     "@babel/runtime": "^7.21.5",
     "@tarojs/components": "workspace:*",
+    "@tarojs/harmony-components": "workspace:*",
     "@tarojs/helper": "workspace:*",
     "@tarojs/plugin-framework-vue2": "workspace:*",
     "@tarojs/plugin-platform-alipay": "workspace:*",
