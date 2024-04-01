@@ -1,6 +1,6 @@
 {
   "name": "@tarojs/plugin-platform-harmony-hybrid",
-  "version": "3.6.25",
+  "version": "3.6.24",
   "description": "Harmony 端平台插件",
   "author": "ZakaryCode",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "url": "git+https://github.com/NervJS/taro.git"
   },
   "scripts": {
-    "prebuild": "run-s clean generate:desc",
+    "prebuild": "cd components-library && pnpm build && cd ../ && run-s clean generate:desc",
     "build": "pnpm run rollup --environment NODE_ENV:production",
     "clean": "rimraf dist",
     "dev": "pnpm run rollup --environment NODE_ENV:development -w",
@@ -35,7 +35,11 @@
   "bugs": {
     "url": "https://github.com/NervJS/taro/issues"
   },
+  "workspaces": [
+    "./components-library"
+  ],
   "dependencies": {
+    "@tarojs/components-harmony-hybrid": "workspace:*",
     "@tarojs/api": "workspace:*",
     "@tarojs/service": "workspace:*",
     "@tarojs/components": "workspace:*",
@@ -60,7 +64,7 @@
     "@rollup/plugin-typescript": "^11.1.0",
     "fast-glob": "^3.3.1",
     "lodash": "^4.17.21",
-    "rollup": "^2.79.0",
+    "rollup": "^3.8.1",
     "rollup-plugin-node-externals": "^5.0.0",
     "rollup-plugin-ts": "^3.0.2",
     "ts-node": "^10.9.1",

@@ -104,12 +104,6 @@ class NativeApi {
 
   // @ts-ignore
   @window.MethodChannel?.jsBridgeMode({ isAsync: false, autoRelease: true })
-  setNavigationStyle (options: any): any {
-    return options
-  }
-
-  // @ts-ignore
-  @window.MethodChannel?.jsBridgeMode({ isAsync: false, autoRelease: true })
   getUserInfo (options: any): any {
     return options
   }
@@ -370,7 +364,7 @@ class NativeApi {
   // NativeFileSystemManager
   // @ts-ignore
   @window.MethodChannel?.jsBridgeMode({ isAsync: false, autoRelease: true })
-  getFileManager (): any {}
+  getFileManager (): any { }
 
   // @ts-ignore
   @window.MethodChannel?.jsBridgeMode({ isAsync: true, autoRelease: false })

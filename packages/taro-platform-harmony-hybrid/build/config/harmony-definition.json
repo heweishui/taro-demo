@@ -234,13 +234,6 @@
     "NfcB": false,
     "NfcF": false,
     "NfcV": false,
-    "NodesRef": {
-      "boundingClientRect": true,
-      "context": true,
-      "node": true,
-      "fields": true,
-      "scrollOffset": true
-    },
     "OffscreenCanvas": false,
     "Path2D": true,
     "Performance": false,
@@ -1238,12 +1231,6 @@
           "DELETE": true,
           "TRACE": true,
           "CONNECT": true
-        },
-        "dataType": {
-          "json": true,
-          "text": true,
-          "base64": true,
-          "arraybuffer": true
         },
         "responseType": {
           "text": true,
