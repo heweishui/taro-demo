@@ -1,7 +1,17 @@
 import { Component, ComponentInterface, Event, EventEmitter, h, Host, Prop, Watch } from '@stencil/core'
 
 let videoId = 0
-
+interface needToUpdateProps{
+  componentId?:string
+  width?:number
+  height?:number
+  src?:string
+  controls?:boolean
+  autoPlay?:boolean
+  muted?:boolean
+  loop?:boolean
+  objectFit?:string
+}
 @Component({
   tag: 'taro-video-core',
   styleUrl: './style/index.scss'
@@ -76,7 +86,7 @@ export class Video implements ComponentInterface {
   }) onSeeking: EventEmitter
 
   private componentId: string
-  private needToUpdate: object = {}
+  private needToUpdate: needToUpdateProps = {}
 
   constructor () {
     this.componentId = `video_${videoId++}`

@@ -14,16 +14,8 @@
   </view>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import './index.scss'
-
-export default {
-  setup () {
-    const msg = ref('Hello world')
-    return {
-      msg
-    }
-  }
-}
+  const msg = ref('Hello world')
 </script>

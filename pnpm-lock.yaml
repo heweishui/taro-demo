@@ -1815,6 +1815,8 @@ importers:
         specifier: 18.1.0
         version: registry.npmjs.org/react-test-renderer@18.1.0(react@18.1.0)
 
+  packages/taro-components/dist/hydrate: {}
+
   packages/taro-components/loader: {}
 
   packages/taro-extend:
@@ -2598,6 +2600,8 @@ importers:
       vue3:
         specifier: npm:vue@^3.0.0
         version: registry.npmjs.org/vue@3.2.47
+
+  packages/taro-platform-harmony-hybrid/components-library/dist/hydrate: {}
 
   packages/taro-platform-harmony-hybrid/components-library/loader: {}
 
