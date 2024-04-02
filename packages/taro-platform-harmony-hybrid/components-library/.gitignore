@@ -28,4 +28,4 @@ src/components.d.ts
 stuff.*
 www
 
-stencil.config.*
+stencil.config.js
