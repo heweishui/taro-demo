@@ -90,24 +90,38 @@ export default class Index extends React.Component {
       },
       {
         id: 'getVideoInfo',
-        inputData: {
-          url: ''
-        },
-        func: (apiIndex, data) => {
+        func: (apiIndex) => {
           TestConsole.consoleTest('getVideoInfo')
-          Taro.getVideoInfo({
-            src: data.url,
+          Taro.chooseVideo({
+            sourceType: ['album'],
+            maxDuration: 60,
+            camera: 'back',
+            compressed: false,
             success: (res) => {
-              TestConsole.consoleSuccess.call(this, res, apiIndex)
+              TestConsole.consoleNormal('chooseVideo success ', res)
+              Taro.getVideoInfo({
+                src: res.tempFilePath,
+                success: (res) => {
+                  TestConsole.consoleSuccess.call(this, res, apiIndex)
+                },
+                fail: (res) => {
+                  TestConsole.consoleFail.call(this, res, apiIndex)
+                },
+                complete: (res) => {
+                  TestConsole.consoleComplete.call(this, res, apiIndex)
+                },
+              }).then((res) => {
+                TestConsole.consoleResult.call(this, res, apiIndex)
+              })
             },
-            fail: (res) => {
-              TestConsole.consoleFail.call(this, res, apiIndex)
-            }, 
-            complete: (res) => {
-              TestConsole.consoleComplete.call(this, res, apiIndex)
+            fail: (err) => {
+              TestConsole.consoleNormal('chooseVideo fail:', err)
             },
-          }).then((res) => {
-            TestConsole.consoleResult.call(this, res, apiIndex)
+            complete: (com) => {
+              TestConsole.consoleNormal('chooseVideo complete', com)
+            },
+          }).then((ret) => {
+            TestConsole.consoleNormal('chooseVideo return', ret)
           })
         },
       },
@@ -346,12 +360,12 @@ export default class Index extends React.Component {
       },
     ],
   }
-  render () {
+  render() {
     const { list } = this.state
     return (
       <View className='api-page'>
         <ButtonList buttonList={list} />
-        <HarVideo id='myVideo' src='https://storage.360buyimg.com/jdrd-blog/27.mp3' />
+        <Video id='myVideo' src='https://storage.360buyimg.com/jdrd-blog/27.mp3' />
       </View>
     )
   }
