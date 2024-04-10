@@ -5,3 +5,5 @@ packages:
   - 'npm/**'
   - 'crates/native_binding'
   - 'examples/mini-program-example'
+  - 'examples/demo-vue2'
+  - 'examples/demo-vue3'

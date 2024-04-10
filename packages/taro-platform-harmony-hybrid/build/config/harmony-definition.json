@@ -1653,12 +1653,6 @@
           "TRACE": true,
           "CONNECT": true
         },
-        "dataType": {
-          "json": true,
-          "text": true,
-          "base64": true,
-          "arraybuffer": true
-        },
         "responseType": {
           "text": true,
           "arraybuffer": true

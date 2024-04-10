@@ -61,7 +61,6 @@ const variesConfig: RollupOptions[] = [{
     'src/api/apis/taro.ts', // APIS
     'src/api/index.ts', // APIS
     'src/components/react/index.ts', // React 组件
-    'src/components/vue2/index.ts', // vue2 组件
     'src/components/vue3/index.ts', // vue3 组件
     'src/runtime/index.ts', // 供 Loader 使用的运行时入口
     'src/runtime/apis/index.ts', // API 入口
@@ -75,6 +74,7 @@ const variesConfig: RollupOptions[] = [{
   plugins: getPlugins([externals({
     deps: true,
     devDeps: false,
+    include:['react','react-dom','vue','tslib']
   })])
 }, {
   input: path.join(cwd, 'src/runtime/apis/index.ts'), // 供 babel-plugin-transform-taroapi 使用，为了能 tree-shaking

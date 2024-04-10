@@ -19,6 +19,7 @@ const config = {
     '@/components': path.resolve(__dirname, '..', 'src/components'),
   },
   defineConstants: {
+    LOCATION_APIKEY: JSON.stringify('LH2BZ-LKR35-HMEI3-IUQDI-47R65-TEFYL')
   },
   copy: {
     patterns: [
