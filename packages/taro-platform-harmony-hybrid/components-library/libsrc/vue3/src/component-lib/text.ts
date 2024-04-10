@@ -1,4 +1,4 @@
-import { h } from 'vue3'
+import { h } from 'vue'
 
 import { useForwardRef } from './forwardRef'
 

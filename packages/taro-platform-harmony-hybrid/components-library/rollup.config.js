@@ -39,41 +39,6 @@ const react_config = {
   ]
 }
 
-const vue2_config = {
-  input: ['libsrc/vue2/src/index.ts', 'libsrc/vue2/src/components-loader.ts', 'libsrc/vue2/src/component-lib/index.ts'],
-  output: {
-    dir: './lib/vue2',
-    exports: 'named',
-    preserveModules: true,
-    preserveModulesRoot: 'libsrc/vue2/src',
-    sourcemap: true
-  },
-  treeshake: false,
-  plugins: [
-    externals({
-      deps: true,
-      devDeps: false,
-      exclude: 'vue-fragment',
-      include: 'vue'
-    }),
-    nodeResolve({
-      preferBuiltins: false,
-      mainFields: ['main:h5', 'browser', 'module', 'jsnext:main', 'main']
-    }),
-    ts({
-      tsconfig:'./tsconfig.library.json',
-      sourceMap: true,
-    }),
-    commonjs({
-      transformMixedEsModules: true,
-      dynamicRequireTargets: ['./libsrc/vue2/src/**/*.js']
-    }),
-    postcss({
-      inject: { insertAt: 'top' },
-      minimize: true,
-    }),
-  ]
-}
 
 const vue3_config = {
   input: ['libsrc/vue3/src/index.ts', 'libsrc/vue3/src/components-loader.ts', 'libsrc/vue3/src/component-lib/index.ts'],
@@ -110,4 +75,4 @@ const vue3_config = {
   ]
 }
 
-export default [react_config, vue2_config, vue3_config]
+export default [react_config, vue3_config]

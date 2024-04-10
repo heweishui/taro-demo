@@ -13,7 +13,7 @@ interface needToUpdateProps{
   objectFit?:string
 }
 @Component({
-  tag: 'taro-video-core',
+  tag: 'taro-video-har-core',
   styleUrl: './style/index.scss'
 })
 export class Video implements ComponentInterface {

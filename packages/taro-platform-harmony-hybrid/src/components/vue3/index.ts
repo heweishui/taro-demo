@@ -1,4 +1,5 @@
 /* eslint-disable simple-import-sort/exports */
+export { VideoHar as Video } from '../../../components-library/lib/vue3'
 export { Ad } from '@tarojs/components/lib/vue3'
 export { AdCustom } from '@tarojs/components/lib/vue3'
 export { AnimationVideo } from '@tarojs/components/lib/vue3'

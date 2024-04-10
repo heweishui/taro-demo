@@ -5,7 +5,11 @@ export function initVue3Components (app, components: Record<string, any> = {}) {
     const tagName = component?.displayName
     if (typeof tagName === 'string' && tagName) {
       component.name = name
-      app.component(tagName.replace(/-core$/, ''), component)
+      if(tagName.includes('har')){
+        app.component(tagName.replace(/-har-core$/, ''), component)
+      }else{
+        app.component(tagName.replace(/-core$/, ''), component)
+      }
     }
   })
 }

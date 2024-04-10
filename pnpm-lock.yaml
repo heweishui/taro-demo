@@ -2400,9 +2400,6 @@ importers:
       '@tarojs/components':
         specifier: workspace:*
         version: link:../taro-components
-      '@tarojs/components-harmony-hybrid':
-        specifier: workspace:*
-        version: link:components-library
       '@tarojs/components-react':
         specifier: workspace:*
         version: link:../taro-components-react
@@ -2464,6 +2461,12 @@ importers:
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
+      react:
+        specifier: ^18.2.0
+        version: registry.npmjs.org/react@18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: registry.npmjs.org/react-dom@18.2.0(react@18.2.0)
       rollup:
         specifier: ^3.8.1
         version: registry.npmjs.org/rollup@3.21.5
@@ -2482,6 +2485,9 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: registry.npmjs.org/typescript@5.3.3
+      vue:
+        specifier: ^3.0.0
+        version: registry.npmjs.org/vue@3.2.47
 
   packages/taro-platform-harmony-hybrid/components-library:
     dependencies:
@@ -2505,7 +2511,7 @@ importers:
         version: registry.npmjs.org/tslib@2.6.2
       vue-fragment:
         specifier: ^1.6.0
-        version: registry.npmjs.org/vue-fragment@1.6.0(vue@2.7.14)
+        version: registry.npmjs.org/vue-fragment@1.6.0(vue@3.2.47)
     devDependencies:
       '@babel/cli':
         specifier: ^7.14.5
@@ -2595,10 +2601,7 @@ importers:
         specifier: ^4.7.4
         version: registry.npmjs.org/typescript@4.9.5
       vue:
-        specifier: ^2.6.11
-        version: registry.npmjs.org/vue@2.7.14
-      vue3:
-        specifier: npm:vue@^3.0.0
+        specifier: ^3.0.0
         version: registry.npmjs.org/vue@3.2.47
 
   packages/taro-platform-harmony-hybrid/components-library/dist/hydrate: {}
@@ -43984,6 +43987,17 @@ packages:
       vue: ^2.5.16
     dependencies:
       vue: registry.npmjs.org/vue@2.7.14
+    dev: false
+
+  registry.npmjs.org/vue-fragment@1.6.0(vue@3.2.47):
+    resolution: {integrity: sha512-a5T8ZZZK/EQzgVShEl374HbobUJ0a7v12BzOzS6Z/wd/5EE/5SffcyHC+7bf9hP3L7Yc0hhY/GhMdwFQ25O/8A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vue-fragment/-/vue-fragment-1.6.0.tgz}
+    id: registry.npmjs.org/vue-fragment/1.6.0
+    name: vue-fragment
+    version: 1.6.0
+    peerDependencies:
+      vue: ^2.5.16
+    dependencies:
+      vue: registry.npmjs.org/vue@3.2.47
     dev: false
 
   registry.npmjs.org/vue-hot-reload-api@2.3.4:

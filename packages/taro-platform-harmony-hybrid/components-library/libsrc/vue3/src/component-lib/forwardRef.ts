@@ -1,4 +1,4 @@
-import { getCurrentInstance } from 'vue3'
+import { getCurrentInstance } from 'vue'
 
 export function useForwardRef () {
   const instance = getCurrentInstance()
