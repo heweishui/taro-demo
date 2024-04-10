@@ -59,7 +59,11 @@ const config = {
     }
   },
   h5: {
+<<<<<<< HEAD
+    publicPath: '/',
+=======
     publicPath: '/spa/main/',
+>>>>>>> d750582f3c96e3aa090d365b55dea8217789cfec
     staticDirectory: 'static',
     postcss: {
       autoprefixer: {

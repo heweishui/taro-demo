@@ -11,7 +11,9 @@
   "files": [
     "dist",
     "index.js",
-    "types"
+    "types",
+    "components-library/lib",
+    "components-library/dist"
   ],
   "sideEffects": [
     "./dist/runtime/index.js",
@@ -75,6 +77,9 @@
     "rollup-plugin-ts": "^3.0.2",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^3.14.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vue": "^3.0.0"
   }
 }

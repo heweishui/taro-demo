@@ -15,7 +15,6 @@ import {
   reLaunch,
   switchTab,
 } from './index'
-import native from './NativeApi'
 import { permanentlyNotSupport } from './utils'
 
 // @ts-ignore
@@ -199,7 +198,8 @@ if (typeof window !== 'undefined') {
 // 更新导航栏状态
 Taro.eventCenter.on('__taroSetNavigationStyle', (style, textStyle, backgroundColor) => {
   if (typeof window !== 'undefined') {
-    native.setNavigationStyle({ style, textStyle, backgroundColor })
+    // @ts-ignore
+    window.native?.setNavigationStyle?.(style, textStyle, backgroundColor)
     // @ts-ignore
     Object.assign(window.currentNavigation, {
       style,
@@ -234,7 +234,8 @@ eventCenter.on('__taroEnterFullScreen', () => {
 eventCenter.on('__taroExitFullScreen', () => {
   // @ts-ignore
   const { style, textStyle, backgroundColor } = window.currentNavigation
-  native.setNavigationStyle({ style, textStyle, backgroundColor })
+  // @ts-ignore
+  window.native?.setNavigationStyle?.(style, textStyle, backgroundColor)
   // @ts-ignore
   if (typeof window.originCapsuleState !== 'undefined') {
     // @ts-ignore

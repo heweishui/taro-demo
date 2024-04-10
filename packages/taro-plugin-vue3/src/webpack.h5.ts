@@ -109,4 +109,14 @@ function setTaroApiLoader (chain) {
       }
     }
   })
+  chain.merge({
+    module: {
+      rule: {
+        'process-import-taro-harmony-hybrid': {
+          test: /(plugin|taro)-platform-harmony-hybrid[\\/]dist[\\/]api[\\/]apis[\\/]taro/,
+          loader: require.resolve('./api-loader')
+        }
+      }
+    },
+  })
 }
