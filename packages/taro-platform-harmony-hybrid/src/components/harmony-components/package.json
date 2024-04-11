@@ -49,7 +49,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@stencil/core": "^2.22.2",
+    "@stencil/core": "^4.15.0",
     "@tarojs/components-advanced": "workspace:*",
     "@tarojs/taro": "workspace:*",
     "classnames": "^2.2.5",
