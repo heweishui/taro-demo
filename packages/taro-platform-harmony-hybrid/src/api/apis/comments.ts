@@ -1647,8 +1647,6 @@
  */
 
 /**
-<<<<<<< HEAD
-=======
  * NodesRef 对象，用于获取 WXML 节点信息的对象
  *
  * @canUse NodesRef
@@ -1656,7 +1654,6 @@
  */
 
 /**
->>>>>>> d750582f3c96e3aa090d365b55dea8217789cfec
  * Path2D
  *
  * @canUse Path2D
