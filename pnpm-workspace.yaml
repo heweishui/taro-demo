@@ -1,5 +1,9 @@
 packages:
   - 'packages/**'
+  - 'packages/taro-platform-harmony-hybrid/src/components/**'
+  - 'examples/mini-program-example'
+  - 'examples/demo-vue2'
+  - 'examples/demo-vue3'
   - '!packages/taro-cli/templates/**'
   - '!**/__tests__/**'
   - 'npm/**'

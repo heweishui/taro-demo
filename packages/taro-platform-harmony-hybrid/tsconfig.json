@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.root.json",
   "compilerOptions": {
+    "jsx": "react",
     "baseUrl": ".",
     "esModuleInterop": true,
     "module": "ESNext",

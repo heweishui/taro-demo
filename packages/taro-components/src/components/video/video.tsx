@@ -550,11 +550,15 @@ export class Video implements ComponentInterface {
       }, 0)
     } else {
       if (!fromBrowser) {
+<<<<<<< HEAD
         // Note: 全屏后，"退出全屏"是浏览器按钮是浏览器内部按钮，非html按钮，点击"退出全屏"按钮是浏览器内部实现功能。此时再次调用exitFullscreen反而会报错，因此不再调用
+=======
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
         document[screenFn.exitFullscreen]()
       }
       Taro.eventCenter.trigger('__taroExitFullScreen', {})
     }
+    // 全屏后，"退出全屏"是浏览器按钮是浏览器内部按钮，非html按钮，点击"退出全屏"按钮是浏览器内部实现功能。此时再次调用exitFullscreen反而会报错，因此不再调用
   }
 
   toggleMute = (e: MouseEvent) => {

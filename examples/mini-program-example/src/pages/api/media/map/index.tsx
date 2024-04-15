@@ -789,8 +789,11 @@ export default class Index extends React.Component {
             enableAutoMaxOverlooking={false} //是否开启最大俯视角
             enable3D //是否开启3D
             onTap={onTaps}
+<<<<<<< HEAD
             height={'400px'}
             width={'400px'}
+=======
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
           ></Map>
         )}
         latitude:<input onBlur={this.handleInputChangeLatitude}></input>

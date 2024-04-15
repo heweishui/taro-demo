@@ -17,8 +17,12 @@ export default class Index extends React.Component {
       {
         id: 'downloadFile',
         inputData: {
+<<<<<<< HEAD
           url: 'http://192.168.111.106:3000/test.jpg',
           filePath: 'internal://cache/test.jpg',
+=======
+          url: 'http://172.20.10.11:3000/static/test.jpg',
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
           withCredentials: false,
         },
         func: (apiIndex, data) => {
@@ -28,8 +32,12 @@ export default class Index extends React.Component {
       {
         id: 'DownloadTask',
         inputData: {
+<<<<<<< HEAD
           url: 'http://192.168.111.106:3000/test.zip',
           filePath: 'internal://cache/test.zip',
+=======
+          url: 'http://172.20.10.11:3000/static/test.jpg',
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
           withCredentials: false,
         },
         func: (apiIndex, data) => {

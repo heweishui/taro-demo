@@ -23,7 +23,11 @@ export default class PageSwitch extends React.Component {
         <View className='components-page__body'>
           <View className='components-page__body-example example'>
             <View className='example-body'>
+<<<<<<< HEAD
               {Taro.getEnv() != Taro.ENV_TYPE.WEB && Taro.getEnv() != Taro.ENV_TYPE.HARMONYHYBRID ? (
+=======
+              {Taro.getEnv() != Taro.ENV_TYPE.WEB && Taro.getEnv() != Taro.ENV_TYPE.MPHARMONY ? (
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
                 <View className='example-body__navigators'>
                   <Navigator
                     url='/pages/component/pages/navigatePage/navigatePage'

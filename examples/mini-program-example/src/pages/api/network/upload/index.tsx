@@ -25,7 +25,11 @@ export default class Index extends React.Component {
       {
         id: 'uploadFile',
         inputData: {
+<<<<<<< HEAD
           url: 'http://192.168.111.106:3000/upload',
+=======
+          url: 'http://192.168.217.245:3000/upload',
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
           filePath: 'internal://cache/test.jpg',
           name: 'file',
           withCredentials: false,
@@ -37,7 +41,11 @@ export default class Index extends React.Component {
       {
         id: 'UploadTask',
         inputData: {
+<<<<<<< HEAD
           url: 'http://192.168.111.106:3000/upload',
+=======
+          url: 'http://192.168.217.245:3000/upload',
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
           filePath: 'internal://cache/test.zip',
           name: 'file',
           withCredentials: false,

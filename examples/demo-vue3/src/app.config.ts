@@ -1,5 +1,6 @@
 export default defineAppConfig({
   pages: [
+<<<<<<< HEAD
     'pages/index/index',
     'pages/api/api',
   ],
@@ -27,3 +28,15 @@ export default defineAppConfig({
     my: 'pages/my/my',
   },
 })
+=======
+    'pages/input/index'
+    // 'pages/index/index'
+  ],
+  window: {
+    backgroundTextStyle: 'light',
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTitleText: 'WeChat',
+    navigationBarTextStyle: 'black'
+  }
+})
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a

@@ -2,7 +2,10 @@ import { View, Button } from '@tarojs/components'
 import Taro, { useLoad, useDidShow } from '@tarojs/taro'
 import './index.scss'
 import { TestConsole } from '@/util/util'
+<<<<<<< HEAD
 import nativeApi from "@/util/nativeApi";
+=======
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
 
 export default function Index() {
   useLoad(() => {
@@ -47,6 +50,7 @@ export default function Index() {
         }}>
         性能测试
       </Button>
+<<<<<<< HEAD
       <Button
         onClick={()=>{
           nativeApi.harmonyNavigateTo({
@@ -65,6 +69,8 @@ export default function Index() {
         }}>
         单实例（单SPA）：接口列表页
       </Button>
+=======
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
     </View>
   )
 }

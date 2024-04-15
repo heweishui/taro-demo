@@ -17,7 +17,11 @@ export default class Index extends React.Component {
       {
         id: 'request',
         inputData: {
+<<<<<<< HEAD
           url: 'http://192.168.43.232:3000/hello',
+=======
+          url: 'http://192.168.217.245:3000/hello',
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
           dataType: 'json',
           method: 'POST',
           data: { name: 'Taro' },

@@ -90,6 +90,7 @@ export default class Index extends React.Component {
       },
       {
         id: 'getVideoInfo',
+<<<<<<< HEAD
         func: (apiIndex) => {
           TestConsole.consoleTest('getVideoInfo')
           Taro.chooseVideo({
@@ -122,6 +123,26 @@ export default class Index extends React.Component {
             },
           }).then((ret) => {
             TestConsole.consoleNormal('chooseVideo return', ret)
+=======
+        inputData: {
+          url: ''
+        },
+        func: (apiIndex, data) => {
+          TestConsole.consoleTest('getVideoInfo')
+          Taro.getVideoInfo({
+            src: data.url,
+            success: (res) => {
+              TestConsole.consoleSuccess.call(this, res, apiIndex)
+            },
+            fail: (res) => {
+              TestConsole.consoleFail.call(this, res, apiIndex)
+            }, 
+            complete: (res) => {
+              TestConsole.consoleComplete.call(this, res, apiIndex)
+            },
+          }).then((res) => {
+            TestConsole.consoleResult.call(this, res, apiIndex)
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
           })
         },
       },
@@ -360,7 +381,11 @@ export default class Index extends React.Component {
       },
     ],
   }
+<<<<<<< HEAD
   render() {
+=======
+  render () {
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
     const { list } = this.state
     return (
       <View className='api-page'>

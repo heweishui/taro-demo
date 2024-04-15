@@ -662,8 +662,11 @@ export default class PageView extends React.Component {
             enableAutoMaxOverlooking={this.state.enableAutoMaxOverlooking}
             enableTraffic={this.state.enableTraffic}
             onTap={onTaps}
+<<<<<<< HEAD
             height={'400px'}
             width={'400px'}
+=======
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
           ></Map>
         )}
         latitude:<input onBlur={this.handleInputChangeLatitude}></input>

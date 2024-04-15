@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import './app.scss'
 
 const App = createApp({
+<<<<<<< HEAD
   mounted () {
     console.log('App mounted.')
   },
@@ -16,6 +17,8 @@ const App = createApp({
   onHide () {
     console.log('App onHide.')
   },
+=======
+>>>>>>> aa9bde35ccaded2f05e51e0ac41686eff1ff114a
   onShow (options) {
     console.log('App onShow.')
   },
