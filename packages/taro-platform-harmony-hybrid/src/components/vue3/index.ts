@@ -59,7 +59,7 @@ export { Tabbar, TabItem } from '@tarojs/components/lib/vue3'
 export { Tabs } from '@tarojs/components/lib/vue3'
 export { Text } from '@tarojs/components/lib/vue3'
 export { Textarea } from '@tarojs/components/lib/vue3'
-export { Video, VideoControl, VideoDanmu } from '@tarojs/components/lib/vue3'
+// export { Video, VideoControl, VideoDanmu } from '@tarojs/components/lib/vue3'
 export { View } from '@tarojs/components/lib/vue3'
 export { VoipRoom } from '@tarojs/components/lib/vue3'
 export { WebView } from '@tarojs/components/lib/vue3'
@@ -72,6 +72,7 @@ export { WebView } from '@tarojs/components/lib/vue3'
 // export { default as ListView } from './components/list/list'
 // export { MatchMedia } from './components/match-media/match-media'
 // export { default as PageContainer } from './components/page-container/page-container'
+export { default as Video } from '../components-vue3/video/Video.vue'
 export {
   StickyHeader,
   StickySection,

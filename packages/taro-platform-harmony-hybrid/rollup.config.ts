@@ -5,7 +5,10 @@ import { merge } from 'lodash'
 import path from 'path'
 import { defineConfig } from 'rollup'
 import externals from 'rollup-plugin-node-externals'
+import postcss from 'rollup-plugin-postcss'
 import ts from 'rollup-plugin-ts'
+// import typescript from 'rollup-plugin-typescript2';
+import vuePlugin from 'rollup-plugin-vue'
 
 import exportNameOnly from './build/rollup-plugin-export-name-only'
 
@@ -61,8 +64,7 @@ const variesConfig: RollupOptions[] = [{
     'src/api/apis/taro.ts', // APIS
     'src/api/index.ts', // APIS
     'src/components/react/index.ts', // React 组件
-    'src/components/vue2/index.ts', // vue2 组件
-    'src/components/vue3/index.ts', // vue3 组件
+    // 'src/components/vue3/index.ts', // vue3 组件
     'src/runtime/index.ts', // 供 Loader 使用的运行时入口
     'src/runtime/apis/index.ts', // API 入口
     'src/runtime/components/index.ts', // Components Library
@@ -72,10 +74,30 @@ const variesConfig: RollupOptions[] = [{
     preserveModules: true,
     preserveModulesRoot: 'src'
   },
-  plugins: getPlugins([externals({
-    deps: true,
-    devDeps: false,
-  })])
+  plugins: getPlugins([
+    externals({
+      deps: true,
+      devDeps: false,
+      include: ['react', 'react-dom', 'vue', 'tslib'],
+    }),
+  ]),
+}, {
+  input: 'src/components/vue3/index.ts', // vue3 组件
+  output: {
+    dir: 'dist',
+    preserveModules: true,
+    preserveModulesRoot: 'src',
+  },
+  plugins:
+    getPlugins([
+      externals({
+        deps: true,
+        devDeps: false,
+        include: ['react', 'react-dom', 'vue', 'tslib'],
+      }),
+      vuePlugin(),
+      postcss(),
+    ]),
 }, {
   input: path.join(cwd, 'src/runtime/apis/index.ts'), // 供 babel-plugin-transform-taroapi 使用，为了能 tree-shaking
   output: {
@@ -96,22 +118,5 @@ if (process.env.NODE_ENV === 'production') {
     },
   })
 }
-
-// if (process.env.NODE_ENV === 'production') {
-//   variesConfig.push({
-//     input: 'src/api/index.ts',
-//     output: {
-//       format: 'cjs',
-//       file: 'dist/api/index.cjs.js',
-//       inlineDynamicImports: true
-//     }
-//   }, {
-//     input: 'src/api/index.ts',
-//     output: {
-//       file: 'dist/api/index.esm.js',
-//       inlineDynamicImports: true
-//     }
-//   })
-// }
 
 export default defineConfig(variesConfig.map(v => merge({}, baseConfig, v)))

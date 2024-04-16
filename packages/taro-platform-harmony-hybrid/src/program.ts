@@ -115,10 +115,6 @@ export default class H5 extends TaroPlatformWeb {
         }
 
         switch (this.framework) {
-          case 'vue':
-            args[0].loaderMeta.extraImportForWeb += `import { initVue2Components } from '@tarojs/components/lib/vue2/components-loader'\nimport * as list from '@tarojs/components'\n`
-            args[0].loaderMeta.execBeforeCreateWebApp += `initVue2Components(list)\n`
-            break
           case 'vue3':
             args[0].loaderMeta.extraImportForWeb += `import { initVue3Components } from '@tarojs/components/lib/vue3/components-loader'\nimport * as list from '@tarojs/components'\n`
             args[0].loaderMeta.execBeforeCreateWebApp += `initVue3Components(component, list)\n`

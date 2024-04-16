@@ -1,13 +1,14 @@
 {
   "extends": "../../tsconfig.root.json",
   "compilerOptions": {
+    "jsx": "react",
     "baseUrl": ".",
     "esModuleInterop": true,
     "module": "ESNext",
     "preserveConstEnums": true,
     "sourceMap": true
   },
-  "include": ["./src", "./types", "./rollup.config.ts"],
+  "include": ["./src", "./types", "./rollup.config.ts", "src/**/*", "src/**/*.vue", "env.d.ts"],
   "ts-node": {
     "compilerOptions": {
       "forceConsistentCasingInFileNames": true,
