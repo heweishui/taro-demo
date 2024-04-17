@@ -1,7 +1,7 @@
 import React, { Component, SyntheticEvent } from 'react'
 
 let videoId = 0
-interface VideoProps extends React.HTMLAttributes<HTMLElement> {
+interface VideoProps extends React.HTMLAttributes<HTMLDivElement> {
   hosWidth?: number
   hosHeight?: number
   src?: string
@@ -44,10 +44,12 @@ class Video extends Component<VideoProps> {
   }
 
   componentDidUpdate () {
-    // @ts-ignore  调用JSB方法更新原生组件数据
-    window?.JSBridge?.transferSameLayerArgs(this.needToUpdate)
-    this.needToUpdate.componentId = this.componentId
-    this.componentId = `video_${videoId++}`
+    if (Object.keys(this.needToUpdate).length > 0) {
+      // @ts-ignore  调用JSB方法更新原生组件数据
+      window?.JSBridge?.transferSameLayerArgs(this.needToUpdate)
+    }
+
+    this.needToUpdate = { componentId: this.componentId }
   }
 
   transferVideoProps () {

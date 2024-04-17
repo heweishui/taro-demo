@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUpdated, defineProps, watch ,emit } from 'vue'
+import { ref, onMounted, onUpdated, defineProps, watch, emit } from 'vue'
 let videoId = 0
 const props = defineProps({
   hosWidth: Number,
@@ -34,7 +34,7 @@ const props = defineProps({
 })
 
 let componentId = `video_${videoId++}`
-const needToUpdate = ref({})
+const needToUpdate = ref({ componentId })
 
 const handleOnPlay = (e) => {
   emit('play', e)
@@ -88,9 +88,10 @@ onMounted(() => {
 })
 
 onUpdated(() => {
+  if (Object.keys(needToUpdate.value).length > 0) {
+    window?.JSBridge?.transferSameLayerArgs(needToUpdate.value)
+  }
   needToUpdate.value = { componentId: componentId }
-  componentId = `video_${videoId++}`
-  window?.JSBridge?.transferSameLayerArgs(needToUpdate.value)
 })
 
 watch(
@@ -145,7 +146,7 @@ watch(
 
 <style lang="scss" scoped>
 /* Add your scoped styles here */
-.video-box{
+.video-box {
   height: 100%;
   width: 100%;
   text-align: center;
